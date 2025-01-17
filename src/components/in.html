@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Voting System Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet">    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#D9D9D9" data-border-radius="small"></script>
+</head>
+<body class="bg-gray-900">
+    <div class="min-h-screen flex">
+        <aside class="w-64 bg-gray-800 text-white fixed h-full">            <div class="p-4">
+                <img src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo" class="h-8">            </div>
+            <nav class="mt-8">
+                <a href="#" class="flex items-center px-4 py-3 bg-custom text-white">                    <i class="fas fa-tachometer-alt w-6"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700">                    <i class="fas fa-users w-6"></i>
+                    <span>Manage Candidates</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700">                    <i class="fas fa-user-check w-6"></i>
+                    <span>Manage Voters</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700">                    <i class="fas fa-sitemap w-6"></i>
+                    <span>Manage Positions</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700">                    <i class="fas fa-building w-6"></i>
+                    <span>Manage Departments</span>
+                </a>                <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700">
+                    <i class="fas fa-chart-bar w-6"></i>
+                    <span>Results</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700">                    <i class="fas fa-cog w-6"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>        </aside>
+
+        <div class="flex-1 ml-64">
+            <header class="bg-gray-800 shadow-sm">
+                <div class="flex items-center justify-between px-8 py-4">                    <h1 class="text-2xl font-semibold text-white">Voting System Dashboard</h1>
+                    <div class="flex items-center space-x-6">                        <span class="text-gray-300" id="currentTime"></span>
+                        <button class="relative">
+                            <i class="fas fa-bell text-gray-300"></i>
+                            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">3</span>
+                        </button>
+                        <div class="flex items-center space-x-3">
+                            <img src="https://creatie.ai/ai/api/search-image?query=A professional headshot of a person with a friendly smile, wearing business attire, against a neutral background&width=40&height=40&orientation=squarish&flag=87acb75a-e82b-4a27-9bbe-284928bbf990&flag=e1654f88-340b-4042-bde7-27e87f5e82f7" class="w-8 h-8 rounded-full" alt="Profile">                            <span class="text-gray-300">Admin User</span>
+                        </div>
+                    </div>                </div>
+            </header>
+
+            <main class="p-8">
+                <div class="grid grid-cols-4 gap-6 mb-8">                    <div class="bg-gray-800 p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-3 bg-custom bg-opacity-10 rounded-lg">                                <i class="fas fa-users text-custom text-xl"></i>
+                            </div>
+                            <div class="ml-4">                                <h3 class="text-gray-400 text-sm">Total Candidates</h3>
+                                <p class="text-2xl font-semibold text-white">24</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-sm">                        <div class="flex items-center">
+                            <div class="p-3 bg-green-900 rounded-lg">
+                                <i class="fas fa-user-check text-green-400 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-gray-400 text-sm">Total Voters</h3>
+                                <p class="text-2xl font-semibold text-white">1,234</p>
+                            </div>                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-sm">                        <div class="flex items-center">
+                            <div class="p-3 bg-yellow-900 rounded-lg">
+                                <i class="fas fa-sitemap text-yellow-400 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-gray-400 text-sm">Total Positions</h3>
+                                <p class="text-2xl font-semibold text-white">8</p>
+                            </div>                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-sm">                        <div class="flex items-center">
+                            <div class="p-3 bg-purple-900 rounded-lg">
+                                <i class="fas fa-building text-purple-400 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-gray-400 text-sm">Total Departments</h3>
+                                <p class="text-2xl font-semibold text-white">12</p>
+                            </div>                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 mb-8">                    <div class="bg-gray-800 p-6 rounded-lg shadow-sm col-span-2">
+                        <h2 class="text-lg font-semibold text-white mb-4">Voter Turnout</h2>
+                        <div id="voterTurnoutChart" style="height: 300px;"></div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-sm">                        <h2 class="text-lg font-semibold text-white mb-4">Department Participation</h2>
+                        <div id="departmentChart" style="height: 300px;"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-sm col-span-2">                        <h2 class="text-lg font-semibold text-white mb-4">Recent Activities</h2>
+                        <div class="space-y-4">                            <div class="flex items-center py-3 border-b border-gray-700">
+                                <div class="w-8 h-8 bg-blue-900 rounded-full flex items-center justify-center">                                    <i class="fas fa-vote-yea text-blue-400"></i>
+                                </div>
+                                <div class="ml-4">                                    <p class="text-sm text-gray-300">New vote cast by John Doe</p>
+                                    <p class="text-xs text-gray-500">2 minutes ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center py-3 border-b border-gray-700">                                <div class="w-8 h-8 bg-green-900 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user-plus text-green-400"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-300">New candidate registered: Sarah Smith</p>
+                                    <p class="text-xs text-gray-500">15 minutes ago</p>                                </div>
+                            </div>
+                            <div class="flex items-center py-3">                                <div class="w-8 h-8 bg-yellow-900 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-bell text-yellow-400"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-300">Election reminder sent to all voters</p>
+                                    <p class="text-xs text-gray-500">1 hour ago</p>
+                                </div>                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-sm">                        <h2 class="text-lg font-semibold text-white mb-4">Quick Actions</h2>
+                        <div class="space-y-3">                            <button class="w-full bg-custom text-white py-2 px-4 rounded-lg !rounded-button flex items-center justify-center">                                <i class="fas fa-plus mr-2"></i>
+                                Start New Election
+                            </button>                            <button class="w-full bg-gray-700 text-gray-300 py-2 px-4 rounded-lg !rounded-button flex items-center justify-center">                                <i class="fas fa-file-alt mr-2"></i>
+                                Generate Reports
+                            </button>                            <button class="w-full bg-gray-700 text-gray-300 py-2 px-4 rounded-lg !rounded-button flex items-center justify-center">                                <i class="fas fa-cog mr-2"></i>
+                                System Status
+                            </button>                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>        function updateTime() {
+            const now = new Date();
+            document.getElementById('currentTime').textContent = now.toLocaleString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        const voterTurnoutChart = echarts.init(document.getElementById('voterTurnoutChart'));
+        const voterTurnoutOption = {
+            animation: false,
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                axisLine: {
+                    lineStyle: {
+                        color: '#6B7280'
+                    }
+                },
+                axisLabel: {
+                    color: '#9CA3AF'
+                }
+            },
+            yAxis: {
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: '#6B7280'
+                    }
+                },
+                axisLabel: {
+                    color: '#9CA3AF'
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#374151'
+                    }
+                }
+            },
+            series: [{
+                data: [150, 230, 224, 218, 135, 147, 260],
+                type: 'line',
+                smooth: true,
+                color: '#D9D9D9'
+            }]
+        };
+        voterTurnoutChart.setOption(voterTurnoutOption);
+
+        const departmentChart = echarts.init(document.getElementById('departmentChart'));
+        const departmentOption = {
+            animation: false,
+            tooltip: {
+                trigger: 'item'
+            },
+            series: [{
+                type: 'pie',
+                radius: '70%',
+                data: [
+                    { value: 35, name: 'IT' },
+                    { value: 25, name: 'HR' },
+                    { value: 20, name: 'Finance' },
+                    { value: 15, name: 'Marketing' },
+                    { value: 5, name: 'Others' }
+                ],
+                label: {
+                    color: '#9CA3AF'
+                },
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+        departmentChart.setOption(departmentOption);
+
+        window.addEventListener('resize', function() {
+            voterTurnoutChart.resize();
+            departmentChart.resize();
+        });
+    </script></body>
+</html>
