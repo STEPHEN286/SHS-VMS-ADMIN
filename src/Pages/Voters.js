@@ -1,8 +1,9 @@
 import React from 'react'
+import VoterContent from '../components/contents/voters/VoterContent'
 
 function Voters() {
   return (
-    <div>Voters</div>
+    <VoterContent />
   )
 }
 
