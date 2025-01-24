@@ -1,5 +1,4 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
+const { app, BrowserWindow } = require("electron");
 
 let win;
 
@@ -9,17 +8,16 @@ function createWindow() {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false
-    }
+      contextIsolation: false,
+    },
   });
 
   // Load React app in development mode
-  win.loadURL('http://localhost:3000'); // Ensure React is running on this URL
-
+  win.loadURL("http://localhost:3000");
   // For debugging, open DevTools
   win.webContents.openDevTools();
 
-  win.on('closed', () => {
+  win.on("closed", () => {
     win = null;
   });
 }
@@ -27,15 +25,15 @@ function createWindow() {
 app.whenReady().then(() => {
   createWindow();
 
-  app.on('activate', () => {
+  app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createWindow();
     }
   });
 });
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
     app.quit();
   }
 });

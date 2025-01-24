@@ -54,7 +54,7 @@ export default function DashboardContent() {
         </div>
       </div>
 
-      {/* Second Grid - Charts */}
+     
       <div className="grid grid-cols-3 gap-6 mb-8">
         <div className="bg-gray-800 p-6 rounded-lg shadow-sm col-span-2">
           <h2 className="text-lg font-semibold text-white mb-4">Voter Turnout</h2>
@@ -70,7 +70,7 @@ export default function DashboardContent() {
         </div>
       </div>
 
-      {/* Third Grid - Recent Activities and Quick Actions */}
+      
       <div className="grid grid-cols-3 gap-6">
         <div className="bg-gray-800 p-6 rounded-lg shadow-sm col-span-2">
           <h2 className="text-lg font-semibold text-white mb-4">Recent Activities</h2>

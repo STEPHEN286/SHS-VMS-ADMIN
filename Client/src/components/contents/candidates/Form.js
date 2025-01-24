@@ -4,7 +4,7 @@ import { UploadOutlined } from "@ant-design/icons";
 
 const { Option } = Select;
 
-const RegisterCandidateForm = () => {
+const RegisterForm = () => {
   const handleFormSubmit = (values) => {
     console.log("Form Values:", values);
   };
@@ -101,4 +101,4 @@ const RegisterCandidateForm = () => {
   );
 };
 
-export default RegisterCandidateForm;
+export default RegisterForm;

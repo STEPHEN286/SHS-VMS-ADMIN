@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import Table from '../../ui/Table'
 import { Button,  } from 'antd';
 import { BiPlus } from 'react-icons/bi';
 import CustomModal from '../../ui/Modal';
-import RegisterCandidateForm from './CandidateForm';
+
+import useFetch from '../../../hook/useFetch';
+import RegisterForm from './Form';
 
 
-export default function CandidateContent() {
+
+function CandidateContent() {
   const [isModalVisible, setIsModalVisible] = useState(false);
     
     const headers = ['Name', 'Position', 'Department', 'Status'];
@@ -17,6 +20,11 @@ export default function CandidateContent() {
         ['Mike Johnson', 'Manager', 'Sales Department', 'Active'],
     ]
 
+    const {data : info} = useFetch("http://localhost:4000/api/candidates")
+    console.log('infor', info);
+    
+
+    
 
     const handleEdit = (index) => {
         alert(`Edit row ${index}`);
@@ -34,13 +42,17 @@ export default function CandidateContent() {
         current: 1,
       };
 
-      const handleOpenModal = () => {
-        setIsModalVisible(true);
-        };
+   
 
-      const handleCloseModal = () => {
-        setIsModalVisible(false); 
-      }
+        
+      
+      const handleOpenModal = useCallback(() => {
+          setIsModalVisible(true); 
+        }, []) 
+
+      const handleCloseModal = useCallback(() => {
+          setIsModalVisible(false); 
+        }, []) 
     
   return (
     <div >
@@ -60,10 +72,11 @@ export default function CandidateContent() {
 
 <CustomModal  modalTitile={"Regiter Candidate"} setIsvisible={setIsModalVisible} Isvisible={isModalVisible}   >
 
- <RegisterCandidateForm />
+<RegisterForm/>
 </CustomModal>
 
       
     </div>
   )
 }
+
